@@ -15,12 +15,6 @@ Comes with config containing the list of remote nodes.
 
 It can import wallet files from [classic Qwertycoin wallet](https://github.com/qwertycoin-org/qwertycoin-gui) but it will take several minutes to refresh, and new wallet file will be incompatible with classic wallet.
 
-### Installing
-
-We offer binary images of the latest releases here: https://releases.qwertycoin.org
-
-If you would like to compile yourself, read on.
-
 ### How To Compile
 
 
