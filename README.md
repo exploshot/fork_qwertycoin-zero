@@ -1,9 +1,9 @@
 ![image](https://cdn.qwertycoin.org/images/press/other/qwc-github-3.png)
 #### Master Build Status
-[![Build Status](https://travis-ci.org/qwertycoin-org/qwertycoin-zero.svg?branch=master)](https://travis-ci.org/qwertycoin-org/qwertycoin-zero) [![Build status](https://ci.appveyor.com/api/projects/status/github/qwertycoin-org/qwertycoin-zero?branch=master&svg=true)](https://ci.appveyor.com/project/qwertycoin-org/qwertycoin-zero)
+[![Build Status](https://travis-ci.org/qwertycoin-org/qwertycoin-zero.svg?branch=master)](https://travis-ci.org/qwertycoin-org/qwertycoin-zero) [![Build status](https://ci.appveyor.com/api/projects/status/github/qwertycoin/qwertycoin-zero?branch=master&svg=true)](https://ci.appveyor.com/project/qwertycoin-org/qwertycoin-zero)
 
 #### Development Build Status
-[![Build Status](https://travis-ci.org/qwertycoin-org/qwertycoin-zero.svg?branch=dev)](https://travis-ci.org/qwertycoin-org/qwertycoin-zero) [![Build status](https://ci.appveyor.com/api/projects/status/github/qwertycoin-org/qwertycoin-zero?branch=dev&svg=true)](https://ci.appveyor.com/project/qwertycoin-org/qwertycoin-zero)
+[![Build Status](https://travis-ci.org/qwertycoin-org/qwertycoin-zero.svg?branch=dev)](https://travis-ci.org/qwertycoin-org/qwertycoin-zero) [![Build status](https://ci.appveyor.com/api/projects/status/github/qwertycoin/qwertycoin-zero?branch=dev&svg=true)](https://ci.appveyor.com/project/qwertycoin-org/qwertycoin-zero)
 
 This is the lite version of Qwertycoin GUI. It works via remote daemon and doesn't store blockchain on your PC. The remote nodes are rewarded for their service. Qwertycoin wallets, connected to masternode, are paying small additional fee (0.25% from the amount of transaction) to that node when are sending transactions through it. These fees are supposed to help to cover the costs of operating Qwertycoin nodes.
 
@@ -23,36 +23,71 @@ If you would like to compile yourself, read on.
 
 ### How To Compile
 
+#### Linux
+
 ##### Prerequisites
 
-- You will need the following packages: boost (1.64 or higher), QT Library (5.9.0 orhigher) cmake (3.10 or higher), git, gcc (4.9 or higher), g++ (4.9 or higher), make, and python. Most of these should already be installed on your system.
+- You will need the following packages: boost (1.64 or higher), QT Library (5.9.0 or higher) cmake (3.10 or higher), git, gcc (4.9 or higher), g++ (4.9 or higher), make, and python. Most of these should already be installed on your system.
 - For example on ubuntu: `sudo apt-get install build-essential python-dev gcc g++ git cmake libboost-all-dev qtbase5-dev`
-- After this you can compile your Qwertycoin
+- After this you can build your Qwertycoin Zero Wallet.
 
+##### Building
 
-**1. Clone wallet sources**
-
+- After installing dependencies run simple script:
 ```
-git clone https://github.com/qwertycoin-org/qwertycoin-zero.git
+git clone --recurse-submodules https://github.com/qwertycoin-org/qwertycoin-zero
+cd ./qwertycoin-zero
+mkdir ./build
+cd ./build
+cmake ..
+cmake --build . --config Release
 ```
+- If all went well, it will complete successfully, and you will find all your binaries in the `./build/Release` directory.
 
-**2. Set symbolic link to coin sources at the same level as `src`. For example:**
+#### Windows 10
 
-```
-ln -s ../qwertycoin cryptonote
-```
+##### Prerequisites
 
-Alternative way is to create git submodule:
+- Install [Visual Studio 2017 Community Edition](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&page=inlineinstall);
+- When installing Visual Studio, it is **required** that you install **Desktop development with C++** and the **VC++ v140 toolchain** when selecting features. The option to install the v140 toolchain can be found by expanding the "Desktop development with C++" node on the right. You will need this for the project to build correctly;
+- Make sure that bundled cmake version is 3.10 or higher.
 
-```
-git submodule add https://github.com/qwertycoin-org/qwertycoin.git cryptonote
-```
+##### Building
 
-**3. Build**
+- From the start menu, open "x64 Native Tools Command Prompt for vs2017";
+- And the run the following commands:
+```
+git clone https://github.com/qwertycoin-org/qwertycoin-zero
+cd qwertycoin-zero
+md build
+cd build
+cmake -G "Visual Studio 15 2017 Win64" ..
+cmake --build . --config Release
+```
+- If all went well, it will complete successfully, and you will find all your binaries in the `.\build\Release` directory;
+- Additionally, a `.sln` file will have been created in the `build` directory. If you wish to open the project in Visual Studio with this, you can.
 
+#### Apple
+
+##### Prerequisites
+
+- Install Xcode and Developer Tools;
+- Install [cmake](https://cmake.org/). See [here](https://stackoverflow.com/questions/23849962/cmake-installer-for-mac-fails-to-create-usr-bin-symlinks) if you are unable to call `cmake` from the terminal after installing;
+- Install git.
+
+##### Building
+
+- After installing dependencies run simple script:
 ```
-mkdir build && cd build && cmake .. && make
+git clone https://github.com/qwertycoin-org/qwertycoin-zero
+cd ./qwertycoin-zero
+mkdir ./build
+cd ./build
+cmake ..
+cmake --build . --config Release
 ```
+- If all went well, it will complete successfully, and you will find all your binaries in the `./build/Release` directory.
+
 
 ## Donate
 
