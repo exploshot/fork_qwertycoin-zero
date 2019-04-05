@@ -1,5 +1,6 @@
 // Copyright (c) 2015-2017, The Bytecoin developers
 // Copyright (c) 2017-2018, The Karbo developers
+// Copyright (c) 2019, The Qwertycoin developers
 //
 // This file is part of Qwertycoin.
 //
@@ -82,7 +83,7 @@ const char SEND_FRAME_STYLE_SHEET[] =
   "}";
 
 const quint64 MAXIMUM_UNSYNCED_BLOCKS_WHEN_SEND_AVAILABLE = 5;
-const quint64 DEFAULT_MIXIN_VALUE = 6;
+const quint64 DEFAULT_MIXIN_VALUE = 2;
 const quint64 MAX_MIXIN_VALUE = 19;
 const quint64 CRITICAL_MIXIN_BOUND = 3;
 const quint64 NORMAL_MIXIN_BOUND = 6;

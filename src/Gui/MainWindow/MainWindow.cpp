@@ -1,5 +1,6 @@
 // Copyright (c) 2015-2017, The Bytecoin developers
 // Copyright (c) 2017-2018, The Karbo developers
+// Copyright (c) 2019, The Qwertycoin developers
 //
 // This file is part of Qwertycoin.
 //
@@ -83,7 +84,7 @@ const char REPORT_ISSUE_URL[] = "https://github.com/qwertycoin-org/qwertycoin-ze
 
 const char DONATION_URL_DONATION_TAG[] = "donation";
 const char DONATION_URL_LABEL_TAG[] = "label";
-const char DONATION_ADDRESS[] = "QWC1K6XEhCC1WsZzT9RRVpc1MLXXdHVKt2BUGSrsmkkXAvqh52sVnNc1pYmoF2TEXsAvZnyPaZu8MW3S8EWHNfAh7X2xa63P7Y";
+const char DONATION_ADDRESS[] = "QWC1RALGaP5U8BLJskYR2YVSjr3DQEEuS5xghbtX2mm134YVXgS4RJHZGkeBvXf4BRFLWkv4zHGJ267S9pjwvVt63xwkdYPCwF";
 
 QByteArray convertAccountKeysToByteArray(const AccountKeys& _accountKeys) {
   QByteArray spendPublicKey(reinterpret_cast<const char*>(&_accountKeys.spendKeys.publicKey), sizeof(Crypto::PublicKey));
