@@ -36,7 +36,7 @@ build_script:
     - cmake --build . --config %QWC_BUILD_TYPE%
     - cpack -C %QWC_BUILD_TYPE%
 
-artifacts
+artifacts:
     - path: _builds\*\qwertycoin-zero-*.exe
       name: Releases
 
