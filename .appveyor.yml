@@ -41,10 +41,9 @@ deploy:
     provider: GitHub
     auth_token:
         secure: "4VgHg760VN6gCaRp6++fnkyxTe/p4vZ8DCNry0YDRhI6O4Pml9+29kfBv2WIjROA"
-    artifact: /build\/dist\/qwertycoin-zero-*/
+    artifact: build/dist/*.exe
     draft: true
     prerelease: true
     on:
-        branch: master
         APPVEYOR_REPO_TAG: true
         QWC_BUILD_TYPE: "Release"
