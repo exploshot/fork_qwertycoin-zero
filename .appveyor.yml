@@ -37,7 +37,7 @@ build_script:
     - cpack -C %QWC_BUILD_TYPE%
 
 artifacts:
-    - path: _builds\*\qwertycoin-zero-*.exe
+    - path: build\*\qwertycoin-zero-*.exe
       name: Releases
 
 deploy:
